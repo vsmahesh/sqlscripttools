@@ -1,0 +1,12 @@
+SELECT TOP(100)
+	qt.text query_text,
+	cp.cacheobjtype,
+	cp.objtype,
+	cp.size_in_bytes
+FROM sys.dm_exec_cached_plans cp (NOLOCK)
+CROSS APPLY sys.dm_exec_sql_text(cp.plan_handle) qt
+WHERE qt.dbid=DB_ID() 
+	AND cp.cacheobjtype=N'Compiled Plan'
+	AND cp.objtype IN (N'Adhoc', N'Prepared')
+	AND cp.usecounts = 1
+order by cp.size_in_bytes DESC OPTION(RECOMPILE);
