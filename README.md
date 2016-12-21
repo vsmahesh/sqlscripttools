@@ -4,7 +4,7 @@ Contains various sql scripts that could be helpful in solving various SQL Server
 ## Execution Plan
 > Contains scripts to find execution plan related scripts
 
-##Lock-Block
+## Lock-Block
 > Contains scripts that is helpful in debugging issues related to locking/blocking
 
 ## Memory Analysis
@@ -12,3 +12,5 @@ Contains various sql scripts that could be helpful in solving various SQL Server
 
 ## Indexes
 > Scripts for finding fragmentation, un used scripts missing indexes and more
+
+In future add more powershell scripts for automating various management tasks for sql server
